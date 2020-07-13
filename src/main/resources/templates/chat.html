@@ -5,32 +5,19 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" type="text/css" media="all" th:href="@{/css/bootstrap.min.css}">
+
     <title>Chat</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-    <style>
-        input {
-         display:block;
-         border : 2px solid green;
-        font-size:25px;
-        position:center;
-        }
-    </style>
 
 </head>
-<body>
-<div class="container">
-    <h1>Submit the form </h1>
-    <br>
+<body  class="p-3 mb-2 bg-light text-black">
+<div class="container justify-content-center w-25 p-3" style="background-color: #eeeeee; margin-top: 5em;" >
 <form th:object="${chatForm}" action="#" th:action="@{/chat}" method="POST">
-    <label class="control-label col-sm-2" for="username">Username:</label>
-    <input id="username" type="text" th:field="*{username}">
-    <br>
-    <label class="control-label col-sm-2" for="messageText">Message Text:</label>
+    <label for="messageText">Message Text:</label>
     <input id="messageText" type="text" th:field="*{messageText}">
-    <br>
-    <label class="control-label col-sm-2" for="messageType">Message Type: </label>
+    <div><label for="messageType">Message Type: </label>
     <select id="messageType" th:field="*{messageType}">
         <option
                 th:each="type : ${allMessageTypes}"
@@ -40,16 +27,14 @@
             Say
         </option>
     </select>
-    <br>
-    <br>
-    <div class="control-label col-sm-6">
+    </div>
+    <div>
     <input type="submit">
     </div>
 </form>
 </div>
-<br><br>
-<div class="container" th:each="chatMessage : ${chatMessages}">
-    <span th:text="${chatMessage.username}">Username</span>: <span th:text="${chatMessage.message}">Hello, world!</span>
+<div class="container justify-content-center w-25 p-3" style="background-color: #eeeeee; margin-top: 5em;" th:each="chatMessage : ${chatMessages}">
+    <span th:text="${chatMessage.username}">Username</span>: <span th:text="${chatMessage.messageText}">Hello, world!</span>
 </div>
 </body>
 </html>
