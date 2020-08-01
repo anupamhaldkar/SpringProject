@@ -29,12 +29,12 @@
     </select>
     </div>
     <div>
-    <input type="submit">
+    <input id="submitMessage" type="submit">
     </div>
 </form>
 </div>
 <div class="container justify-content-center w-25 p-3" style="background-color: #eeeeee; margin-top: 5em;" th:each="chatMessage : ${chatMessages}">
-    <span th:text="${chatMessage.username}">Username</span>: <span th:text="${chatMessage.messageText}">Hello, world!</span>
+    <span class="chatMessageUsername" th:text="${chatMessage.username}">Username</span>: <span class="chatMessageText" th:text="${chatMessage.messageText}">Hello, world!</span>
 </div>
 </body>
 </html>
