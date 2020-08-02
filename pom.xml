@@ -13,10 +13,7 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<name>review</name>
 	<description>Demo project for Spring Boot</description>
-
-
-
-	<dependencies>
+<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-security</artifactId>
@@ -84,6 +81,8 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+				<version>2.3.0.RELEASE</version>
+  				
 			</plugin>
 		</plugins>
 	</build>
