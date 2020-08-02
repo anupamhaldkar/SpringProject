@@ -1,5 +1,11 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<configuration>
-    <logger name="org.apache" level="ERROR" />
-    <logger name="httpclient" level="ERROR" />
-</configuration>
+<logger name="org.apache.commons.httpclient">
+    <level value="fatal"/>
+</logger>
+
+<logger name="httpclient.wire.header">
+    <level value="fatal"/>
+</logger>
+
+<logger name="httpclient.wire.content">
+    <level value="fatal"/>
+</logger>
